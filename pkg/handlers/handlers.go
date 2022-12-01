@@ -3,9 +3,9 @@ package handlers
 import (
 	"net/http"
 
-	"github.com/scottwcode/bookings-app/pkg/config"
-	"github.com/scottwcode/bookings-app/pkg/models"
-	"github.com/scottwcode/bookings-app/pkg/render"
+	"github.com/scottwcode/go-bnb-bookings/pkg/config"
+	"github.com/scottwcode/go-bnb-bookings/pkg/models"
+	"github.com/scottwcode/go-bnb-bookings/pkg/render"
 )
 
 // Repo is a repository used by the handlers

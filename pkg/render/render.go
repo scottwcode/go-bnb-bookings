@@ -8,8 +8,8 @@ import (
 	"path/filepath"
 	"text/template"
 
-	"github.com/scottwcode/bookings-app/pkg/config"
-	"github.com/scottwcode/bookings-app/pkg/models"
+	"github.com/scottwcode/go-bnb-bookings/pkg/config"
+	"github.com/scottwcode/go-bnb-bookings/pkg/models"
 )
 
 var functions = template.FuncMap{}

@@ -5,9 +5,9 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/scottwcode/bookings-app/pkg/config"
-	"github.com/scottwcode/bookings-app/pkg/handlers"
-	"github.com/scottwcode/bookings-app/pkg/render"
+	"github.com/scottwcode/go-bnb-bookings/pkg/config"
+	"github.com/scottwcode/go-bnb-bookings/pkg/handlers"
+	"github.com/scottwcode/go-bnb-bookings/pkg/render"
 )
 
 const portNumber = ":8080"
