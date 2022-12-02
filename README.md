@@ -12,5 +12,5 @@ Uses the following:
 * Nosurf https://github.com/justinas/nosurf
 * Bootstrap 4.6 for html/css formatting https://getbootstrap.com/
 * Datepicker https://github.com/mymth/vanillajs-datepicker
-* Custom alerts using Notie
-* Modals using SweetAlert2
+* Custom alerts using Notie <https://github.com/jaredreich/notie>
+* Modals using SweetAlert2 (swal2) <https://sweetalert2.github.io/>
