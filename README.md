@@ -14,3 +14,5 @@ Uses the following:
 * Datepicker https://github.com/mymth/vanillajs-datepicker
 * Custom alerts using Notie <https://github.com/jaredreich/notie>
 * Modals using SweetAlert2 (swal2) <https://sweetalert2.github.io/>
+* email validation using govalidator <https://github.com/asaskevich/govalidator>
+  
