@@ -2,7 +2,7 @@
 Repository containing code to book and manage reservations (bed&breakfast, etc)
 * Built primarily using Go version 1.19.3
 * Uses HTML, CSS & Javascript for web page templates, alerts, etc
-* Connects to a Postgressql backend database for persistent data
+* Connects to a PostgreSQL backend database for persistent data
 * Custom User and Admin roles for customer vs admin UX
 * Much of the content originated from Udemy course, "Building Modern Web Applications with Go(lang)" by Trevor Sawler <github.com/tsawler>
 
