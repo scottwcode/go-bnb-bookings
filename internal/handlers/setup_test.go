@@ -15,8 +15,8 @@ import (
 	"github.com/go-chi/chi/middleware"
 	"github.com/justinas/nosurf"
 	"github.com/scottwcode/go-bnb-bookings/internal/config"
-	"github.com/scottwcode/go-bnb-bookings/models"
-	"github.com/scottwcode/go-bnb-bookings/render"
+	"github.com/scottwcode/go-bnb-bookings/internal/models"
+	"github.com/scottwcode/go-bnb-bookings/internal/render"
 )
 
 var app config.AppConfig
@@ -57,7 +57,7 @@ func getRoutes() http.Handler {
 	repo := NewRepo(&app)
 	NewHandlers(repo)
 
-	render.NewTemplates(&app)
+	render.NewRenderer(&app)
 
 	mux := chi.NewRouter()
 

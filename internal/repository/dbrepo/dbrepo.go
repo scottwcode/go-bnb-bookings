@@ -4,7 +4,7 @@ import (
 	"database/sql"
 
 	"github.com/scottwcode/go-bnb-bookings/internal/config"
-	repository "github.com/scottwcode/go-bnb-bookings/internal/repository/dbrepo"
+	"github.com/scottwcode/go-bnb-bookings/internal/repository"
 )
 
 type postgresDBRepo struct {
