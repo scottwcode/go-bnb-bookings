@@ -28,7 +28,15 @@ type Repository struct {
 }
 
 // NewRepo creates a new repository
-func NewRepo(a *config.AppConfig, db *driver.DB) *Repository {
+func NewRepo(a *config.AppConfig) *Repository {
+	return &Repository{
+		App: a,
+		DB:  dbrepo.NewTestingRepo(a),
+	}
+}
+
+// NewTestRepo creates a new repository
+func NewTestRepo(a *config.AppConfig, db *driver.DB) *Repository {
 	return &Repository{
 		App: a,
 		DB:  dbrepo.NewPostgresRepo(db.SQL, a),
