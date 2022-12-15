@@ -33,7 +33,18 @@ func main() {
 	defer db.SQL.Close()
 
 	defer close(app.MailChan)
+
+	fmt.Println("Starting mail listener...")
 	listenForMail()
+
+	// msg := models.MailData{
+	// 	To:      "john@doe.ca",
+	// 	From:    "me@here.com",
+	// 	Subject: "This is a subject",
+	// 	Content: "",
+	// }
+
+	// app.MailChan <- msg
 
 	// Send mail using Standard Go library. Not very good, so going to install
 	// a good package to send mail/messages
