@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"net/smtp"
 	"os"
 	"time"
 
@@ -33,14 +32,17 @@ func main() {
 	}
 	defer db.SQL.Close()
 
+	defer close(app.MailChan)
+	listenForMail()
+
 	// Send mail using Standard Go library. Not very good, so going to install
 	// a good package to send mail/messages
-	from := "me@here.com"
-	auth := smtp.PlainAuth("", from, "", "localhost")
-	err = smtp.SendMail("localhost:1025", auth, from, []string{"you@there.com"}, []byte("Hello, from mail!"))
-	if err != nil {
-		log.Fatal(err)
-	}
+	// from := "me@here.com"
+	// auth := smtp.PlainAuth("", from, "", "localhost")
+	// err = smtp.SendMail("localhost:1025", auth, from, []string{"you@there.com"}, []byte("Hello, from mail!"))
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
 
 	fmt.Printf("Starting application on port %s", portNumber)
 
@@ -61,6 +63,9 @@ func run() (*driver.DB, error) {
 	gob.Register(models.User{})
 	gob.Register(models.Room{})
 	gob.Register(models.RoomRestriction{})
+
+	mailChan := make(chan models.MailData)
+	app.MailChan = mailChan
 
 	// change this to true when in production
 	app.InProduction = false
