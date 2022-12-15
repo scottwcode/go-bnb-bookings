@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"net/smtp"
 	"os"
 	"time"
 
@@ -31,6 +32,15 @@ func main() {
 		log.Fatal(err)
 	}
 	defer db.SQL.Close()
+
+	// Send mail using Standard Go library. Not very good, so going to install
+	// a good package to send mail/messages
+	from := "me@here.com"
+	auth := smtp.PlainAuth("", from, "", "localhost")
+	err = smtp.SendMail("localhost:1025", auth, from, []string{"you@there.com"}, []byte("Hello, from mail!"))
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	fmt.Printf("Starting application on port %s", portNumber)
 
